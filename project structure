@@ -1,0 +1,30 @@
+telegram-rtmp-bot/
+├── bot/
+│   ├── __init__.py
+│   ├── config.py           # Configuration & Env loading
+│   ├── handlers/           # Telegram command handlers
+│   │   ├── __init__.py
+│   │   ├── admin.py        # /system, /help, /restart
+│   │   ├── rtmp.py         # /addrtmp, /listrtmp, /deletertmp
+│   │   ├── stream.py       # /stream, /stop, /status
+│   │   └── video.py        # /upload, /videos, /deletevideo
+│   └── middlewares.py      # Owner-only access control
+├── database/
+│   ├── __init__.py
+│   └── mongo.py            # MongoDB Motor client & CRUD
+├── services/
+│   ├── __init__.py
+│   ├── ffmpeg_manager.py   # FFmpeg process & logic
+│   └── system_monitor.py   # Hardware stats logic
+├── utils/
+│   ├── __init__.py
+│   ├── helpers.py          # Formatters, Path sanitizers
+│   └── logger.py           # Rotating logs configuration
+├── systemd/
+│   └── streamer.service    # Systemd unit file
+├── .env.example            # Environment template
+├── .gitignore              # Git ignore patterns
+├── Dockerfile              # Docker support
+├── install.sh              # Debian auto-installer
+├── main.py                 # Entry point
+└── requirements.txt        # Python dependencies
