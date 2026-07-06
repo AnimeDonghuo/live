@@ -1,0 +1,17 @@
+[Unit]
+Description=Telegram RTMP Streamer Bot
+After=network.target mongodb.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/telegram-rtmp-bot
+ExecStart=/root/telegram-rtmp-bot/venv/bin/python3 main.py
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=tg-streamer
+
+[Install]
+WantedBy=multi-user.target
